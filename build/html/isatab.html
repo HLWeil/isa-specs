@@ -1,95 +1,50 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>2. ISA-Tab format &mdash; ISA Model and Serialization Specifications 1.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3. ISA-JSON format" href="isajson.html" />
     <link rel="prev" title="1. ISA Abstract Model" href="isamodel.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> ISA Model and Serialization Specifications
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            ISA Model and Serialization Specifications
           </a>
-
-          
-            
-            
               <div class="version">
                 1.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="isamodel.html">1. ISA Abstract Model</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. ISA-Tab format</a><ul>
@@ -108,8 +63,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#factor-value">2.3.5. Factor Value</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#study-table-file">2.3.6. Study Table file</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#assay-table-file">2.3.7. Assay Table file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#special-cases">2.3.8. Special cases</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-files">2.3.9. Data Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-pointers">2.3.8. Data Pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#special-cases">2.3.9. Special cases</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dataset-files">2.4. Dataset files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#explication">2.4.1. Explication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.4.2. Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#object-type">2.4.3. Object Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dataset-table-file">2.4.4. Dataset Table file</a></li>
 </ul>
 </li>
 </ul>
@@ -119,73 +81,32 @@
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">5. Contributing</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">ISA Model and Serialization Specifications</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>2. ISA-Tab format</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>ISA-Tab format</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/isatab.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="isa-tab-format">
-<h1>2. ISA-Tab format<a class="headerlink" href="#isa-tab-format" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="isa-tab-format">
+<h1><span class="section-number">2. </span>ISA-Tab format<a class="headerlink" href="#isa-tab-format" title="Permalink to this heading"></a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>As a pre-requisite to reading this specification, please make sure you have read and understood the <a class="reference internal" href="isamodel.html"><span class="doc">ISA Abstract Model</span></a> that the ISA-Tab format is based on.</p>
@@ -197,13 +118,13 @@ column structures specified below.</p>
 <p>Below we provide the schemas and the content rules for valid ISA-Tab documents. Full examples of ISA content as
 ISA-Tab can be found in the ISA datasets repository, here <a class="reference external" href="https://git.io/vD1vC">https://git.io/vD1vC</a> We recommend that you study
 these examples to better understand the structure of ISA-Tab documents.</p>
-<div class="section" id="format">
-<h2>2.1. Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h2>
+<section id="format">
+<h2><span class="section-number">2.1. </span>Format<a class="headerlink" href="#format" title="Permalink to this heading"></a></h2>
 <dl class="simple">
-<dt>ISA-Tab uses three types of file to capture the experimental metadata:</dt><dd><ul class="simple">
+<dt>ISA-Tab uses three types of files to capture the experimental and computational metadata:</dt><dd><ul class="simple">
 <li><p>Investigation file</p></li>
 <li><p>Study file</p></li>
-<li><p>Assay file (with associated data files)</p></li>
+<li><p>Assay file (with associated Dataset files)</p></li>
 </ul>
 </dd>
 </dl>
@@ -236,9 +157,9 @@ already (that is <code class="docutils literal notranslate"><span class="pre">A-
 do not accept spaces in file paths): non-English alphabetic characters cannot be guaranteed
 to be supported in all locales. It would be good practice to avoid the shell metacharacters
 <code class="docutils literal notranslate"><span class="pre">(){}'[]$.&quot;</span></code>.</p>
-</div>
-<div class="section" id="investigation-file">
-<h2>2.2. Investigation File<a class="headerlink" href="#investigation-file" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="investigation-file">
+<h2><span class="section-number">2.2. </span>Investigation File<a class="headerlink" href="#investigation-file" title="Permalink to this heading"></a></h2>
 <p>The Investigation file fulfils four needs:</p>
 <ol class="arabic simple">
 <li><p>to declare key entities, such as factors, protocols, which may be referenced in the other files</p></li>
@@ -276,8 +197,8 @@ these appear, the comment name must be unique within the context of a single blo
 occurences of <code class="docutils literal notranslate"><span class="pre">Comment[external</span> <span class="pre">DB</span> <span class="pre">REF]</span></code> within <code class="docutils literal notranslate"><span class="pre">STUDY</span> <span class="pre">ASSAYS</span></code>. Also, the value cells MUST match the number of
 values indicated by the rest of the section in context.</p>
 </div>
-<div class="section" id="ontology-source-reference-section">
-<h3>2.2.1. Ontology Source Reference section<a class="headerlink" href="#ontology-source-reference-section" title="Permalink to this headline">¶</a></h3>
+<section id="ontology-source-reference-section">
+<h3><span class="section-number">2.2.1. </span>Ontology Source Reference section<a class="headerlink" href="#ontology-source-reference-section" title="Permalink to this heading"></a></h3>
 <p>The Ontology Source section of the Investigation file is used to declare Ontology Sources used elsewhere in the ISA-Tab
 files within the context of an Investigation.</p>
 <p>Where a row labelled with <code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">Source</span> <span class="pre">REF</span></code> suffixed in the Investigation
@@ -288,11 +209,11 @@ of the cell SHOULD match one of the <code class="docutils literal notranslate"><
 <p>This section MUST contain zero or more values.</p>
 <p><strong>ONTOLOGY SOURCE REFERENCE</strong></p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -327,9 +248,9 @@ of the cell SHOULD match one of the <code class="docutils literal notranslate"><
 <span class="n">Term</span> <span class="n">Source</span> <span class="n">Description</span>	<span class="s2">&quot;Chemical Entities of Biological Interest Ontology&quot;</span>	<span class="s2">&quot;Experimental Factor Ontology&quot;</span>	<span class="s2">&quot;Ontology for Biomedical Investigations&quot;</span>	<span class="s2">&quot;National Center for Biotechnology Information (NCBI) Organismal Classification&quot;</span>	<span class="s2">&quot;Phenotypic Quality Ontology&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="investigation-section">
-<h3>2.2.2. Investigation section<a class="headerlink" href="#investigation-section" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="investigation-section">
+<h3><span class="section-number">2.2.2. </span>Investigation section<a class="headerlink" href="#investigation-section" title="Permalink to this heading"></a></h3>
 <p>This section is organized in several subsections, described in detail below. The Investigation section provides a
 flexible mechanism for grouping two or more Study files where required. When only one Study is created, the values in
 this section SHOULD be left empty and the relevant metadata values recorded in the Study section only.</p>
@@ -337,11 +258,11 @@ this section SHOULD be left empty and the relevant metadata values recorded in t
 <p><strong>INVESTIGATION</strong></p>
 <p>This section MUST contain zero or one values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -384,11 +305,11 @@ this section SHOULD be left empty and the relevant metadata values recorded in t
 <p><strong>INVESTIGATION PUBLICATIONS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -441,11 +362,11 @@ this section SHOULD be left empty and the relevant metadata values recorded in t
 <p><strong>INVESTIGATION CONTACTS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -515,9 +436,9 @@ this section SHOULD be left empty and the relevant metadata values recorded in t
 <span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Roles</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="study-section">
-<h3>2.2.3. Study section<a class="headerlink" href="#study-section" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="study-section">
+<h3><span class="section-number">2.2.3. </span>Study section<a class="headerlink" href="#study-section" title="Permalink to this heading"></a></h3>
 <p>This section is organized in several subsections, described in detail below. This section also represents a
 <strong>repeatable block</strong>, which is replicated according to the number of Studies to report (i.e. two Studies, two Study
 blocks are represented in the Investigation file). The subsections in the block are arranged vertically; the intent
@@ -528,11 +449,11 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <p><strong>STUDY</strong></p>
 <p>This section MUST contain zero or one values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -579,11 +500,11 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <p><strong>STUDY DESIGN DESCRIPTORS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -616,11 +537,11 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <p><strong>STUDY PUBLICATIONS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -673,11 +594,11 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <p><strong>STUDY FACTORS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -715,11 +636,11 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <p><strong>STUDY ASSAYS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -777,11 +698,11 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <p><strong>STUDY PROTOCOLS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Label</p></th>
@@ -869,11 +790,11 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <p><strong>STUDY CONTACTS</strong></p>
 <p>This section MUST contain zero or more values.</p>
 <p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 60%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 60.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>abel</p></th>
@@ -942,10 +863,10 @@ this repeatable block, although their order MAY vary; the fields MUST remain wit
 <span class="n">Study</span> <span class="n">Person</span> <span class="n">Roles</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;;;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="study-and-assay-files">
-<h2>2.3. Study and Assay files<a class="headerlink" href="#study-and-assay-files" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="study-and-assay-files">
+<h2><span class="section-number">2.3. </span>Study and Assay files<a class="headerlink" href="#study-and-assay-files" title="Permalink to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Study</span></code> and <code class="docutils literal notranslate"><span class="pre">Assay</span></code> Table files are structure with fields organized on a per-row basis. The first row MUST be used
 for column headers. Generally, objects such as Materials and Processes are indicated with <code class="docutils literal notranslate"><span class="pre">&lt;entity&gt;</span> <span class="pre">Name</span></code>, for example
 <code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Name</span></code> to indicate a sample, or <code class="docutils literal notranslate"><span class="pre">Assay</span> <span class="pre">Name</span></code> to indicate a named instance of a process that has been applied. Object
@@ -960,17 +881,12 @@ file. Columns headed with <code class="docutils literal notranslate"><span class
 <code class="docutils literal notranslate"><span class="pre">ORCID</span> <span class="pre">ID</span></code> applies to the relevant Source node based on the row.</p>
 </div>
 <p>Specific types of nodes are specified in the Assay Table file section below.</p>
-<div class="section" id="ontology-annotations">
-<h3>2.3.1. Ontology Annotations<a class="headerlink" href="#ontology-annotations" title="Permalink to this headline">¶</a></h3>
+<section id="ontology-annotations">
+<h3><span class="section-number">2.3.1. </span>Ontology Annotations<a class="headerlink" href="#ontology-annotations" title="Permalink to this heading"></a></h3>
 <p>Where a value is an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> in a table file, <code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">Accession</span> <span class="pre">Number</span></code> and <code class="docutils literal notranslate"><span class="pre">Term</span> <span class="pre">Source</span> <span class="pre">REF</span></code> fields MUST
 follow the column cell in which the value is entered. For example, a characteristic type <code class="docutils literal notranslate"><span class="pre">Organism</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">Homo</span> <span class="pre">sapiens</span></code>
 can be qualified with an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> of a term from NCBI Taxonomy as follows:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 24%" />
-<col style="width: 38%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Characteristics[Organism]</p></th>
 <th class="head"><p>Term Source REF</p></th>
@@ -986,20 +902,14 @@ can be qualified with an <code class="docutils literal notranslate"><span class=
 </table>
 <p>An <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> MAY be applied to any appropriate <code class="docutils literal notranslate"><span class="pre">Characteristics</span></code> or <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">Value</span></code>.</p>
 <p>This implements <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> from the ISA Abstract Model.</p>
-</div>
-<div class="section" id="unit">
-<h3>2.3.2. Unit<a class="headerlink" href="#unit" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="unit">
+<h3><span class="section-number">2.3.2. </span>Unit<a class="headerlink" href="#unit" title="Permalink to this heading"></a></h3>
 <p>Where a value is numeric, a <code class="docutils literal notranslate"><span class="pre">Unit</span></code> MAY be used to qualify the quantity. In this case, following the column in which a <code class="docutils literal notranslate"><span class="pre">Unit</span></code>
 is used, a <code class="docutils literal notranslate"><span class="pre">Unit</span></code> heading MUST be present, and MAY be further annotated as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
 <p>For example, to qualify the value <code class="docutils literal notranslate"><span class="pre">300</span></code> with a <code class="docutils literal notranslate"><span class="pre">Unit</span></code> <code class="docutils literal notranslate"><span class="pre">Kelvin</span></code> qualified as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> from the Units Ontology declared
 in the Ontology Sources with <code class="docutils literal notranslate"><span class="pre">UO</span></code>:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 36%" />
-<col style="width: 10%" />
-<col style="width: 20%" />
-<col style="width: 34%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter Value[Temperature]</p></th>
 <th class="head"><p>Unit</p></th>
@@ -1015,14 +925,14 @@ in the Ontology Sources with <code class="docutils literal notranslate"><span cl
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="processes">
-<h3>2.3.3. Processes<a class="headerlink" href="#processes" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="processes">
+<h3><span class="section-number">2.3.3. </span>Processes<a class="headerlink" href="#processes" title="Permalink to this heading"></a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">Process</span></code> MUST be indicated with the column heading <code class="docutils literal notranslate"><span class="pre">Protocol</span> <span class="pre">REF</span></code>. The value of <code class="docutils literal notranslate"><span class="pre">Protocol</span> <span class="pre">REF</span></code> cells MUST reference
 a <code class="docutils literal notranslate"><span class="pre">Protocol</span></code> declared in the investigation file.</p>
-</div>
-<div class="section" id="characteristics">
-<h3>2.3.4. Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="characteristics">
+<h3><span class="section-number">2.3.4. </span>Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Characteristics</span></code> are used as an attribute column following <code class="docutils literal notranslate"><span class="pre">Source</span> <span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Name</span></code>. This column contains terms describing each material
 according to the characteristics category indicated in the column header in the pattern <code class="docutils literal notranslate"><span class="pre">Characteristics</span> <span class="pre">[&lt;category</span> <span class="pre">term&gt;]</span></code>.
 For example, a column header <code class="docutils literal notranslate"><span class="pre">Characteristics</span> <span class="pre">[organ</span> <span class="pre">part]</span></code> would contain terms describing an organ part.
@@ -1031,11 +941,6 @@ value MUST be free text, numeric, or an <code class="docutils literal notranslat
 <p>For example, a characteristic type Organism with a value of Homo sapiens
 can be qualified with an Ontology Annotation of a term from NCBI Taxonomy as follows:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 40%" />
-<col style="width: 23%" />
-<col style="width: 37%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Characteristics[organ part]</p></th>
 <th class="head"><p>Term Source REF</p></th>
@@ -1049,19 +954,14 @@ can be qualified with an Ontology Annotation of a term from NCBI Taxonomy as fol
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="factor-value">
-<h3>2.3.5. Factor Value<a class="headerlink" href="#factor-value" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="factor-value">
+<h3><span class="section-number">2.3.5. </span>Factor Value<a class="headerlink" href="#factor-value" title="Permalink to this heading"></a></h3>
 <p>A factor is an independent variable manipulated by an experimentalist with the intention to affect biological systems
 in a way that can be measured by an assay. This field holds the actual data for the <code class="docutils literal notranslate"><span class="pre">Factor</span> <span class="pre">Value</span></code> named between the
 square brackets (as declared in the Investigation file) so MUST match; for example, <code class="docutils literal notranslate"><span class="pre">Factor</span> <span class="pre">Value</span> <span class="pre">[compound]</span></code>. The
 value MUST be free text, numeric, or an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 27%" />
-<col style="width: 37%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Factor Value[Gender]</p></th>
 <th class="head"><p>Term Source REF</p></th>
@@ -1075,9 +975,9 @@ value MUST be free text, numeric, or an <code class="docutils literal notranslat
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="study-table-file">
-<h3>2.3.6. Study Table file<a class="headerlink" href="#study-table-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="study-table-file">
+<h3><span class="section-number">2.3.6. </span>Study Table file<a class="headerlink" href="#study-table-file" title="Permalink to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Study</span></code> file contains contextualizing information for one or more assays, for example; the subjects studied; their
 source(s); the sampling methodology; their characteristics; and any treatments or manipulations performed to
 prepare the specimens.</p>
@@ -1091,11 +991,6 @@ that MUST be of a Protocol type that is of a type <code class="docutils literal 
 <p>A <code class="docutils literal notranslate"><span class="pre">Sample</span></code> MUST be indicated with the column heading <code class="docutils literal notranslate"><span class="pre">Sample</span> <span class="pre">Name</span></code>.</p>
 <p>For example, a simple source to sample may be represented as:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 42%" />
-<col style="width: 29%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Source Name</p></th>
 <th class="head"><p>Protocol REF</p></th>
@@ -1112,11 +1007,6 @@ that MUST be of a Protocol type that is of a type <code class="docutils literal 
 <p>Where a graph splits or pools, we use the <code class="docutils literal notranslate"><span class="pre">Name</span></code> column to represent the same nodes.</p>
 <p>For example, if we split a source into two samples, we  might represent this as:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 42%" />
-<col style="width: 29%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Source Name</p></th>
 <th class="head"><p>Protocol REF</p></th>
@@ -1136,11 +1026,6 @@ that MUST be of a Protocol type that is of a type <code class="docutils literal 
 </table>
 <p>If we pool two sources into a single sample, we might represent this as:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 42%" />
-<col style="width: 29%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Source Name</p></th>
 <th class="head"><p>Protocol REF</p></th>
@@ -1167,9 +1052,9 @@ that MUST be of a Protocol type that is of a type <code class="docutils literal 
 </pre></div>
 </div>
 <p>The Study Table file implements the Study graphs from the ISA Abstract Model.</p>
-</div>
-<div class="section" id="assay-table-file">
-<h3>2.3.7. Assay Table file<a class="headerlink" href="#assay-table-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="assay-table-file">
+<h3><span class="section-number">2.3.7. </span>Assay Table file<a class="headerlink" href="#assay-table-file" title="Permalink to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Assay</span></code> file represents a portion of the experimental graph (i.e., one part of the overall
 structure of the workflow); each <code class="docutils literal notranslate"><span class="pre">Assay</span></code> file must contain assays of the same type, defined by the type of
 measurement (e.g. gene expression) and the technology employed (e.g. DNA microarray). Assay-related information
@@ -1206,143 +1091,243 @@ file locations. For submission or transfer, files MAY be packed with ISA-Tab fil
 </pre></div>
 </div>
 <p>The Assay Table file implements the <code class="docutils literal notranslate"><span class="pre">Assay</span></code> graphs from the ISA Abstract Model.</p>
-</div>
-<div class="section" id="special-cases">
-<h3>2.3.8. Special cases<a class="headerlink" href="#special-cases" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-pointers">
+<h3><span class="section-number">2.3.8. </span>Data Pointers<a class="headerlink" href="#data-pointers" title="Permalink to this heading"></a></h3>
+<p>In cases where the input or output of a process of the <code class="docutils literal notranslate"><span class="pre">Assay</span></code> is not a complete <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">File</span></code>, but rather a part of the data file, a <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Pointer</span></code> column SHOULD be used to qualify the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">File</span></code> column.
+These pointer columns contain a string pointing to the header or field name by which the data object can be found in the file.</p>
+<p>The type of the <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Pointer</span></code> column MUST match the according <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">File</span></code> column: <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">Pointer</span></code> for <code class="docutils literal notranslate"><span class="pre">Image</span> <span class="pre">File</span></code>,  <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span> <span class="pre">Pointer</span></code> for <code class="docutils literal notranslate"><span class="pre">Raw</span> <span class="pre">Data</span> <span class="pre">File</span></code> and <code class="docutils literal notranslate"><span class="pre">Derived</span> <span class="pre">Data</span> <span class="pre">Pointer</span></code> for <code class="docutils literal notranslate"><span class="pre">Derived</span> <span class="pre">Data</span> <span class="pre">File</span></code></p>
+<p>We might represent measurement values of different samples being written to the same file like this:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source Name</p></th>
+<th class="head"><p>Protocol REF</p></th>
+<th class="head"><p>Raw Data File</p></th>
+<th class="head"><p>Raw Data Pointer</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>source1</p></td>
+<td><p>measurement</p></td>
+<td><p>measurement.csv</p></td>
+<td><p>source1_quant</p></td>
+</tr>
+<tr class="row-odd"><td><p>source2</p></td>
+<td><p>measurement</p></td>
+<td><p>measurement.csv</p></td>
+<td><p>source2_quant</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="special-cases">
+<h3><span class="section-number">2.3.9. </span>Special cases<a class="headerlink" href="#special-cases" title="Permalink to this heading"></a></h3>
 <p><strong>Assay with technology type: DNA microarray hybridization</strong></p>
 <p>If an Assay being described has a technology type of DNA microarray hybridization, the following additional nodes MAY apply.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Hybridization Assay Name (in place of Assay Name)</dt>
+<dt class="field-odd">Hybridization Assay Name (in place of Assay Name)<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Used as an identifier within the Assay file. This column contains an user-defined name for each hybridization. Qualifying headers for Hybridization Assay Name item include Array Design REF or Array Design File.</p>
 </dd>
-<dt class="field-even">Scan Name</dt>
+<dt class="field-even">Scan Name<span class="colon">:</span></dt>
 <dd class="field-even"><p>Used as an identifier within the Assay file. This column contains a user-defined name for each Scan event.</p>
 </dd>
-<dt class="field-odd">Array Data File (in place of Raw Data File)</dt>
+<dt class="field-odd">Array Data File (in place of Raw Data File)<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Column to provide name (or URI) of raw array data files.</p>
 </dd>
-<dt class="field-even">Derived Array Data File (in place of Derived Data File)</dt>
+<dt class="field-even">Derived Array Data File (in place of Derived Data File)<span class="colon">:</span></dt>
 <dd class="field-even"><p>Column to provide name (or URI) of data files resulting from data transformation or processing.</p>
 </dd>
-<dt class="field-odd">Array Data Matrix File</dt>
+<dt class="field-odd">Array Data Matrix File<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Column to provide name (or URI) of raw data matrix files.</p>
 </dd>
-<dt class="field-even">Derived Array Data Matrix File</dt>
+<dt class="field-even">Derived Array Data Matrix File<span class="colon">:</span></dt>
 <dd class="field-even"><p>Column to provide name (or URI) of processed data matrix files, resulting from data transformation or processing. Where data from multiple hybridizations is stored in a single file, the data should be mapped to the appropriate hybridization (or scan, or normalization) via the Data Matrix format itself</p>
 </dd>
-<dt class="field-odd">Array Design File</dt>
+<dt class="field-odd">Array Design File<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Column to provide name of file containing the array design, used for a particular hybridization. For submission or transfer, ADF files can be packaged with ISA-TAB files into an ISArchive, see section 2.4.</p>
 </dd>
-<dt class="field-even">Array Design REF</dt>
+<dt class="field-even">Array Design REF<span class="colon">:</span></dt>
 <dd class="field-even"><p>This column is used to reference the identifier (or accession number) of an existing array design.</p>
 </dd>
 </dl>
 <p><strong>Assay file with technology type: Gel electrophoresis</strong></p>
 <p>If an Assay being described has a technology type of Gel electrophoresis, the following additional nodes MAY apply.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Gel Electrophoresis Assay Name (in place of Assay Name)</dt>
+<dt class="field-odd">Gel Electrophoresis Assay Name (in place of Assay Name)<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Used as an identifier within the Assay file. This column contains user-defined names for each electrophoresis gel assay. For 2-dimensional gels, the following qualifying headers can be used instead:</p>
 </dd>
-<dt class="field-even">First Dimension</dt>
+<dt class="field-even">First Dimension<span class="colon">:</span></dt>
 <dd class="field-even"><p>The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields are required.</p>
 </dd>
-<dt class="field-odd">Second Dimension</dt>
+<dt class="field-odd">Second Dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields are required.</p>
 </dd>
-<dt class="field-even">Scan Name</dt>
+<dt class="field-even">Scan Name<span class="colon">:</span></dt>
 <dd class="field-even"><p>Used as an identifier within the Assay file. This column contains user-defined names for each Scan event.</p>
 </dd>
-<dt class="field-odd">Spot Picking File</dt>
+<dt class="field-odd">Spot Picking File<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Column to provide name (or URI) of files file holding protein spot coordinates and metadata for use by spot picking instruments.</p>
 </dd>
 </dl>
 <p><strong>Assay file with technology type: Mass Spectrometry (MS)</strong></p>
 <p>If an Assay being described has a technology type of Mass Spectrometry, the following additional nodes MAY apply.</p>
 <dl class="field-list simple">
-<dt class="field-odd">MS Assay Name (in place of Assay Name)</dt>
+<dt class="field-odd">MS Assay Name (in place of Assay Name)<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Used as an identifier within the Assay file. This column contains user-defined names for each MS Assay.</p>
 </dd>
-<dt class="field-even">Raw Spectral Data File (in place of Raw Data File)</dt>
+<dt class="field-even">Raw Spectral Data File (in place of Raw Data File)<span class="colon">:</span></dt>
 <dd class="field-even"><p>Column to provide name (or URI) of ‘raw’ spectral data files.</p>
 </dd>
-<dt class="field-odd">Derived Spectral Data File (in place of Derived Data File)</dt>
+<dt class="field-odd">Derived Spectral Data File (in place of Derived Data File)<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Column to provide name (or URI) of derived spectral data files, resulting from data transformation or processing.</p>
 </dd>
 </dl>
 <p>When Mass Spectrometry is used in proteomics the following data files are required, according to PSI specifications and Pride submission requirements (6, 10):</p>
 <dl class="field-list simple">
-<dt class="field-odd">Peptide Assignment File</dt>
+<dt class="field-odd">Peptide Assignment File<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Column to provide name (or URI) of file(s) containing peptide assignments.</p>
 </dd>
-<dt class="field-even">Protein Assignment File</dt>
+<dt class="field-even">Protein Assignment File<span class="colon">:</span></dt>
 <dd class="field-even"><p>Column to provide name (or URI) of file(s) containing protein assignments.</p>
 </dd>
-<dt class="field-odd">Post Translational Modification Assignment File</dt>
+<dt class="field-odd">Post Translational Modification Assignment File<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Column to provide name (or URI) of file(s) containing posited post-translational modifications.</p>
 </dd>
 </dl>
 <p>Capturing data resulting from the use of mass spectrometry in metabol/nomics requires a settled definition for a
 Metabolite Assignment File (inter alia); such a file is currently under development in collaboration with the
 Metabolomics Standards Initiative (MSI).</p>
+</section>
+</section>
+<section id="dataset-files">
+<h2><span class="section-number">2.4. </span>Dataset files<a class="headerlink" href="#dataset-files" title="Permalink to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Dataset</span></code> Table files are structured with fields organized on a per-row basis. The first row MUST be used for column headers.
+It is used to give additional metadata about the values stored in a data file or about full data files.
+In contrast to Assay and Study files, all headers besides comments MUST appear at most once.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Comments are also allowed in Dataset files, in a similar fashion to how they are used in the Investigation
+file. Columns headed with <code class="docutils literal notranslate"><span class="pre">Comment[&lt;comment</span> <span class="pre">name&gt;]</span></code> MAY appear anywhere in the table.</p>
 </div>
-<div class="section" id="data-files">
-<h3>2.3.9. Data Files<a class="headerlink" href="#data-files" title="Permalink to this headline">¶</a></h3>
-<p>ISA-Tab focuses on structuring experimental metadata; raw and derived data files are considered as external files.
-The Assay file can refer to one or more of these external data files. For guidelines on how to
-format these data files, users should refer to the relevant standards group or reference
-repository.</p>
-<p>For submission or transfer, ISA-Tab files and associated data files MAY be packaged into an ISArchive, a zip file
-containing all the files together.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;entity&gt;</span> <span class="pre">File</span></code> MUST be used as an identifier for the file path of the data node.
+It SHOULD be either the file name, a relative file path or an absolute file path.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;entity&gt;</span> <span class="pre">Pointer</span></code> SHOULD be used to further quality the data node, if it is not the full data file, but a part of the data file.
+It MAY be a REGEX pattern.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Generated</span> <span class="pre">By</span></code> MAY be used to specify the tool, by which this data node was created.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Label</span></code> MAY be used to give the data node an additional, free-text name.</p>
+<section id="explication">
+<h3><span class="section-number">2.4.1. </span>Explication<a class="headerlink" href="#explication" title="Permalink to this heading"></a></h3>
+<p>To contextualize the meaning of the values, an <code class="docutils literal notranslate"><span class="pre">Explication</span></code> MAY be used. In this case, an <code class="docutils literal notranslate"><span class="pre">Explication</span></code> heading MUST be present, and MAY be further annotated as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+<p>For example, to contextualize the values in the datafile as being an  <code class="docutils literal notranslate"><span class="pre">Arithmetic</span> <span class="pre">Mean</span></code> qualified as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> from the NCIT Ontology declared
+in the Ontology Sources with <code class="docutils literal notranslate"><span class="pre">NCIT</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head" colspan="3"><p>Explication       | Term Source REF | Term Accession Number</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Arithmetic Mean</p></td>
+<td><p>NCIT</p></td>
+<td><p>C53319</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h3><span class="section-number">2.4.2. </span>Unit<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>Where a the value of a data object is numeric, a <code class="docutils literal notranslate"><span class="pre">Unit</span></code> MAY be used to qualify the quantity. In this case, a <code class="docutils literal notranslate"><span class="pre">Unit</span></code> heading MUST be present, and MAY be further annotated as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+<p>For example, to qualify the values in the datafile with a <code class="docutils literal notranslate"><span class="pre">Unit</span></code> <code class="docutils literal notranslate"><span class="pre">parts</span> <span class="pre">per</span> <span class="pre">million</span></code> qualified as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> from the Units Ontology declared
+in the Ontology Sources with <code class="docutils literal notranslate"><span class="pre">UO</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Unit</p></th>
+<th class="head"><p>Term Source REF</p></th>
+<th class="head"><p>Term Accession Number</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>parts per million</p></td>
+<td><p>UO</p></td>
+<td><p><a class="reference external" href="http://.../obo/UO_0000169">http://…/obo/UO_0000169</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="object-type">
+<h3><span class="section-number">2.4.3. </span>Object Type<a class="headerlink" href="#object-type" title="Permalink to this heading"></a></h3>
+<p>To specify the format in which a data object will appear in the data file, an <code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">Type</span></code> SHOULD be used. In this case, an <code class="docutils literal notranslate"><span class="pre">Object</span> <span class="pre">Type</span></code> heading MUST be present, and MAY be further annotated as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+<p>For example, to specify, that the data objects in the datafile are written as <code class="docutils literal notranslate"><span class="pre">Float``s,</span> <span class="pre">qualified</span> <span class="pre">as</span> <span class="pre">an</span> <span class="pre">``Ontology</span> <span class="pre">Annotation</span></code> from the NCIT Ontology declared
+in the Ontology Sources with <code class="docutils literal notranslate"><span class="pre">NCIT</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Object Type</p></th>
+<th class="head"><p>Term Source REF</p></th>
+<th class="head"><p>Term Accession Number</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Float</p></td>
+<td><p>NCIT</p></td>
+<td><p>C48150</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dataset-table-file">
+<h3><span class="section-number">2.4.4. </span>Dataset Table file<a class="headerlink" href="#dataset-table-file" title="Permalink to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> file does not represent processes with inputs and outputs, like studies and assays, but rather statically describes the values that can be found in data files.
+It contextualizes the data, so that it can be more easily interpreted without preceding knowledge about it.</p>
+<p>Dataset Table files SHOULD have file names corresponding to the pattern <code class="docutils literal notranslate"><span class="pre">d_*.txt</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">d_Dataset01.txt</span></code></p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Data Pointer	Data File	Generated By	Explication	Term Source REF	Term Accession Number	Unit	Term Source REF	Term Accession Number	Object Type	Term Source REF	Term Accession Number	Label	Comment [Explanation]
+target_id	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	gene identifier	NCIT	C48664				String	NCIT	C45253	Gene ID	Gene identifier, reference zum fasta
+pval	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	p-value	NCIT	C44185				Float	NCIT	C48150	P-Value	Pvalue, has a term
+qval	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	q-value	NCIT	C64217				Float	NCIT	C48150	Q-Value	qVal, has a term
+test_stat	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	test statistic	OBCS	0000013				Float	NCIT	C48150	Test Statistic	test statisitc, has a term
+rss	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	residual	STATO	0000234				Float	NCIT	C48150	Residual sum of squares	residual sum of squares, has a term
+degrees_free	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	number of degrees of freedom	STATO	0000069				Integer	NCIT	C45255	Number Of Degrees Of Freedom	degrees of freedom, has a term
+mean_obs	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	mean	NCIT	C53319	Transcript Fragment Count per Million Formula	NCIT	C181324	Float	NCIT	C48150	Mean	mean of observations, needs references
+var_obs	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	variance	NCIT	C48918				Float	NCIT	C48150	Variance	variance of observations, needs references
+tech_var	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	variance	NCIT	C48918				Float	NCIT	C48150	Technical variance	technical variance? Has a term
+sigma_sq	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	variance	NCIT	C48918				Float	NCIT	C48150	Variance	variance of observations, needs references
+smooth_sigma_sq	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	smoothed variance						Float	NCIT	C48150	Smoothed Variance	smoothed variance
+final_sigma_sq	runs/kallisto_sleuth/sleuth_dge.csv	workflows/kallisto_sleuth.R	corrected variance						Float	NCIT	C48150	Corrected Variance	adjusted variance
+</pre></div>
 </div>
-</div>
-</div>
+<p>The Dataset Table file implements the <code class="docutils literal notranslate"><span class="pre">Data</span></code> graphs from the ISA Abstract Model.</p>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="isajson.html" class="btn btn-neutral float-right" title="3. ISA-JSON format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="isamodel.html" class="btn btn-neutral float-left" title="1. ISA Abstract Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="isajson.html" class="btn btn-neutral float-right" title="3. ISA-JSON format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright .
-
-    </p>
+    <p>&#169; Copyright .</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
